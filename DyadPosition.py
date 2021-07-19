@@ -234,7 +234,7 @@ def perform_exclusion(chr_a):
             pass
     std_file.close()
     exclude_file.close()
-    #os.remove(input + "_std_" + str(chr_a) + ".temp")
+    os.remove(input + "_std_" + str(chr_a) + ".temp")
 
 def choose_chr_perform_exclusion():
     for a in range(0, len(chr)):
@@ -252,8 +252,8 @@ def merging(chr_a):
     smooth_file_readlines = smooth_file.readlines()
     exclude_file = open(input + "_exclude_" + str(chr_a) + ".temp", 'r')
     exclude_file_readlines = exclude_file.readlines()
-    smooth_merged_file = open(input + "_smooth_merged_.wig", 'a')
-    exclude_merged_file = open(input + "_exclude_merged_.bed", 'a')
+    smooth_merged_file = open(input + "_smooth_merged.wig", 'a')
+    exclude_merged_file = open(input + "_exclude_merged.bed", 'a')
     for s in range(0, len(smooth_file_readlines)):
         smooth_merged_file.write(smooth_file_readlines[s])
     for e in range(0, len(exclude_file_readlines)):
